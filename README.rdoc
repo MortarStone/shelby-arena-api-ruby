@@ -1,0 +1,42 @@
+= Shelby Arena API
+
+This Ruby project is an API wrapper for the Shelby Arena API
+
+
+== Install / Setup
+
+Installing the gem
+
+    gem install shelby-arena-api
+
+
+To add it to your Gemfile
+
+    gem 'shelby-arena-api', :require => 'shelby_arena'
+
+
+== Example usage
+
+Checkout the examples folder.
+
+
+== Additional resources
+
+Checkout the docs folder for the PDF.
+
+
+== License
+
+This project is released under the MIT license (see LICENSE).
+
+This project is maintained by Wes Hays (https://github.com/weshays).
+
+
+== Contributors
+
+Darren Johnson: https://github.com/djohnson
+
+
+== Want to Contribute?
+
+If you would like to get involved in this project, then please fork the project. Make changes, add features, write some tests, and then send a pull request. 

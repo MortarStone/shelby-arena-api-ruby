@@ -1,0 +1,10 @@
+shelby-arena-api-*.gem
+.DS_Store
+storage/*
+doc/*
+bin/
+.bundle/
+.rbenv-version
+index.rb
+.idea/*
+coverage

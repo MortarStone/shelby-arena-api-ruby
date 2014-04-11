@@ -1,24 +1,12 @@
-# module ShelbyArenaKeys
-
-#   USERNAME = '*** USERNAME **'
-#   PASSWORD = '*** PASSWORD ***'  
-
-#   API_KEY = '*** API TOKEN ***'
-#   API_SECRET = '*** API SECRET ***'
-
-#   SHELBY_ARENA_SERVICE_URL = 'http://www.example.com/api.svc' 
-
-# end
-
-
 module ShelbyArenaKeys
+  USERNAME = '*** YOUR CHURCH USERNAME ***'
+  PASSWORD = '*** YOUR CHURCH USER PASSWORD' 
 
-  USERNAME = 'ATest'
-  PASSWORD = 'H7501Z54sG34sLM' 
+  REGULAR_API_KEY = '*** REGULAR API KEY ***'
+  REGULAR_API_SECRET = '*** REGULAR API SECRET ***'
 
-  API_KEY = '333555d2-1834-4596-834d-1259191ecfde'
-  API_SECRET = '771d762b-04a7-4303-acd7-7172fbec9127'
+  CONTRIBUTION_API_KEY = '*** CONTRIBUTION API KEY ***'
+  CONTRIBUTION_API_SECRET = '*** CONTRIBUTION API SECRET ***'  
 
-  SHELBY_ARENA_SERVICE_URL = 'http://arenadev.northcoastchurch.com/api.svc'    
-
+  SHELBY_ARENA_SERVICE_URL = '*** SERVICE URL ***'    
 end

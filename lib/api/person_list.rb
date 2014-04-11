@@ -4,8 +4,7 @@ module ShelbyArena
 
     include Enumerable
 
-    attr_reader :count, :page_number, :total_records, :additional_pages
-
+    #attr_reader :count, :page_number, :total_records, :additional_pages
 
     # Constructor.
     #
@@ -14,27 +13,27 @@ module ShelbyArena
     # Options:
     # :page - (optional) The page number to get.
     # :reader - (optional) The Reader to use to load the data.
-    def initialize(options)
+    def initialize(options = {})
       #options[:page] ||= 1
-      reader = options[:reader] || FellowshipOne::PersonListReader.new(options)
-      @json_data = reader.load_feed
+      reader = options[:reader] || ShelbyArena::PersonListReader.new(options)
+      @json_data = reader.load_data['PersonListResult']['Persons']['Person']
 
-      @count = @json_data['@count'].to_i
-      @page_number = @json_data['@pageNumber'].to_i
-      @total_records = @json_data['@totalRecords'].to_i
-      @additional_pages = @json_data['@additionalPages'].to_i
+      # @count = @json_data['@count'].to_i
+      # @page_number = @json_data['@pageNumber'].to_i
+      # @total_records = @json_data['@totalRecords'].to_i
+      # @additional_pages = @json_data['@additionalPages'].to_i
     end
 
 
-    # All the people in the list.
-    #
-    # @return array of names (first last).
-    def all_names
-      return [] unless @json_data['person']
-      @json_data['person'].collect { |person| [person['firstName'], person['lastName']].join(' ') }
-    end
+    # # All the people in the list.
+    # #
+    # # @return array of names (first last).
+    # def all_names
+    #   return [] unless @json_data['person']
+    #   @json_data['person'].collect { |person| [person['firstName'], person['lastName']].join(' ') }
+    # end
 
-    alias_method :names, :all_names
+    # alias_method :names, :all_names
 
 
     # Get the specified person.
@@ -43,13 +42,13 @@ module ShelbyArena
     #
     # @return [Person]
     def [](index)
-      Person.new( @json_data['person'][index] ) if @json_data['person'] and @json_data['person'][index]
+      Person.new( @json_data[index] ) unless @json_data[index].nil?
     end
 
 
     # This method is needed for Enumerable.
     def each &block
-      @json_data['person'].each{ |person| yield( Person.new(person) )}
+      @json_data.each{ |person| yield( Person.new(person) )}
     end
   
     # Alias the count method
@@ -63,15 +62,6 @@ module ShelbyArena
       self.count == 0 ? true : false
     end
 
-
-    # Get all the people ids in the list.
-    #
-    # @return An array of people ids.
-    def ids
-      (@json_data['person'].collect { |person| person['@id'] }).uniq
-    end
-
-
     # Access to the raw JSON data.  This method is needed for merging lists.
     #
     # @returns Raw JSON data.
@@ -81,5 +71,4 @@ module ShelbyArena
 
   end
     
-  
 end

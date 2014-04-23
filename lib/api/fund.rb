@@ -26,7 +26,7 @@ module ShelbyArena
     # @param reader (optional) The object that has the data. This can be a FundReader or Hash object.
     def initialize(reader = nil)
       if reader.is_a?(FundReader)    
-        initialize_from_json_object(reader.load_feed['fund'])
+        initialize_from_json_object(reader.load_data['Fund'])
       elsif reader.is_a?(Hash)   
         initialize_from_json_object(reader)
       end

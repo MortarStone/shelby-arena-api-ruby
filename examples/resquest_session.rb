@@ -6,7 +6,7 @@ require File.dirname(__FILE__) + '/shelby_arena_keys.rb'
 
 shelby_session = ShelbyArena::Api.request_session(ShelbyArenaKeys::USERNAME, 
                                                   ShelbyArenaKeys::PASSWORD, 
-                                                  ShelbyArenaKeys::API_KEY, 
+                                                  ShelbyArenaKeys::REGULAR_API_KEY, 
                                                   ShelbyArenaKeys::SHELBY_ARENA_SERVICE_URL)
 
   

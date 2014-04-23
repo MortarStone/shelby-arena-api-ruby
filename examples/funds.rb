@@ -30,10 +30,10 @@ asdf=111
 # puts '*****************'
 # puts '*****************'
 
-# person2 = ShelbyArena::Person.load_by_id(55144)
+fund2 = ShelbyArena::Fund.load_by_id(fund.fund_id)
 
-# debugger
-# asdf=222
+debugger
+asdf=222
 
 # puts '*****************'
 # puts person.inspect

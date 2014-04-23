@@ -26,8 +26,7 @@ module ShelbyArena
       raise 'Shelby DELETE not tested yet'
       # Typhoeus::Request.delete(url, {:headers => headers, :params => params})
     end    
-
-
+    
     if !response.success?
       if response.code > 0
         raise ShelbyArenaExceptions::UnableToConnectToShelbyArena.new(response.body)

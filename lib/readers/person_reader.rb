@@ -7,9 +7,10 @@ module ShelbyArena
     # @param person_id (optional) The ID of the person to load.
     def initialize(person_id = nil)
       if person_id.nil?
-        @url_new_data_path = '/v1/People/New'
+        raise 'The create endpoint is not known yet.'
+        @url_new_data_path = nil # Not sure yet
       else
-        @url_data_path = "/v1/People/#{person_id}"
+        @url_data_path = "person/#{person_id}"
       end
     end
     

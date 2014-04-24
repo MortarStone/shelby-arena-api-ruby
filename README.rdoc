@@ -12,7 +12,7 @@ Installing the gem
 
 To add it to your Gemfile
 
-    gem 'shelby-arena-api', :require => 'shelby_arena'
+    gem 'shelby-arena-api', require: 'shelby_arena'
 
 
 == Example usage

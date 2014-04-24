@@ -34,7 +34,7 @@ This project is maintained by Wes Hays (https://github.com/weshays).
 
 == Contributors
 
-Darren Johnson: https://github.com/djohnson
+Wanna help?  It could be you...
 
 
 == Want to Contribute?

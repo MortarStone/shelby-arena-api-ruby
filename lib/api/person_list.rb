@@ -4,37 +4,16 @@ module ShelbyArena
 
     include Enumerable
 
-    #attr_reader :count, :page_number, :total_records, :additional_pages
-
     # Constructor.
     #
     # @param options A hash of options for loading the list.
     #
     # Options:
-    # :page - (optional) The page number to get.
     # :reader - (optional) The Reader to use to load the data.
     def initialize(options = {})
-      #options[:page] ||= 1
       reader = options[:reader] || ShelbyArena::PersonListReader.new(options)
       @json_data = reader.load_data['PersonListResult']['Persons']['Person']
-
-      # @count = @json_data['@count'].to_i
-      # @page_number = @json_data['@pageNumber'].to_i
-      # @total_records = @json_data['@totalRecords'].to_i
-      # @additional_pages = @json_data['@additionalPages'].to_i
     end
-
-
-    # # All the people in the list.
-    # #
-    # # @return array of names (first last).
-    # def all_names
-    #   return [] unless @json_data['person']
-    #   @json_data['person'].collect { |person| [person['firstName'], person['lastName']].join(' ') }
-    # end
-
-    # alias_method :names, :all_names
-
 
     # Get the specified person.
     #

@@ -43,12 +43,12 @@ module ShelbyArena
     #
     # @param reader (optional) The object that has the data.  This can be a PersonReader or Hash object.
     # @param options (optional) Options for including more information.
-    def initialize(reader = nil, options = {})   
+    def initialize(reader = nil, options = {})       
       @writer_object = PersonWriter
       if reader.is_a?(PersonReader)
         initialize_from_json_object(reader.load_data['Person'])
       elsif reader.is_a?(Hash) 
-        initialize_from_json_object(reader)
+        initialize_from_json_object(reader)        
       else # new empty
         raise 'Not sure about this one yet'
         # reader = PersonReader.new

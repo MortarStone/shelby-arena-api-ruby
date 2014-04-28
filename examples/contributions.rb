@@ -19,11 +19,11 @@ ShelbyArena::Api.connect(shelby_session.id,
                          ShelbyArenaKeys::CONTRIBUTION_API_SECRET, 
                          ShelbyArenaKeys::SHELBY_ARENA_SERVICE_URL)
 
-#contribution_list = ShelbyArena::ContributionList.new
-#contribution = contribution_list[0]
+contribution_list = ShelbyArena::ContributionList.new
+contribution = contribution_list[0]
 
-# debugger
-# asdf=111
+debugger
+asdf=111
 
 # puts '*****************'
 # puts person_list.inspect

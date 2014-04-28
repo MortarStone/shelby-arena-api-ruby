@@ -19,8 +19,8 @@ ShelbyArena::Api.connect(shelby_session.id,
                          ShelbyArenaKeys::CONTRIBUTION_API_SECRET, 
                          ShelbyArenaKeys::SHELBY_ARENA_SERVICE_URL)
 
-contribution_list = ShelbyArena::ContributionList.new
-contribution = contribution_list[0]
+#contribution_list = ShelbyArena::ContributionList.new
+#contribution = contribution_list[0]
 
 # debugger
 # asdf=111
@@ -30,7 +30,9 @@ contribution = contribution_list[0]
 # puts '*****************'
 # puts '*****************'
 
-contribution2 = ShelbyArena::Contribution.load_by_id(contribution.contribution_id)
+# contribution2 = ShelbyArena::Contribution.load_by_id(contribution.contribution_id)
+
+list = ShelbyArena::Search.search_for_contributions_by_date_range('2012-01-01', '2014-05-15')
 
 debugger
 asdf=222

@@ -37,6 +37,58 @@ module ShelbyArena
       end
     end
 
+
+    # Helper methods
+
+    def fund_id
+      begin
+        self.contribution_funds['ContributionFund']['Fund']['FundId']
+      rescue
+        nil
+      end
+    end
+
+
+    def fund_name
+      begin
+        self.contribution_funds['ContributionFund']['Fund']['FundName']
+      rescue
+        nil
+      end
+    end
+
+
+    def first_name_with_nickname
+      begin
+        fname = self.person_information['FirstName']
+        if self.person_information['NickName'].strip != '' and 
+           self.person_information['NickName'].strip != fname
+          fname += " (#{self.person_information['NickName']})"
+        end
+        fname
+      rescue
+        nil
+      end
+    end
+
+
+    def first_name
+      begin
+        self.person_information['FirstName']
+      rescue
+        nil
+      end
+    end
+
+
+    def last_name
+      begin
+        self.person_information['NickName']
+      rescue
+        nil
+      end
+    end
+    
   end
 
 end

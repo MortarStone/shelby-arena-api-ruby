@@ -14,8 +14,12 @@ module ShelbyArena
     # Options:
     # :reader - (optional) The Reader to use to load the data.
     def initialize(options = {})
-      reader = options[:reader] || ShelbyArena::ContributionListReader.new(options)    
-      @json_data = reader.load_data['ContributionListResult']['Contributions']['Contribution']
+      reader = options[:reader] || ShelbyArena::ContributionListReader.new(options)        
+      @json_data = if reader.load_data['ContributionListResult']['Contributions'].nil?
+        []
+      else
+        reader.load_data['ContributionListResult']['Contributions']['Contribution']
+      end
     end
 
     # Get the specified contribution.

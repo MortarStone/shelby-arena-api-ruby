@@ -39,9 +39,10 @@ module ShelbyArena
       # The data loaded from family_members is useless.  It is best to just reload all the family 
       # members as person objects so all attributes are set.     
       # fm[0] is 'Person'
-      # fm[1] is a Hash of person info to match some, not all, of the attributes above.
+      # fm[1] is an array of Hashes or a sigle Hash of person info to match some, not all, of the attributes above.
       method_to_call = "#{ShelbyArena::attr_underscore('family_members')}="
-      self.send(method_to_call, self.family_members.collect { |fm| ShelbyArena::Person.load_by_id(fm[1]['PersonID']) })       
+      members = self.family_members.first[1].is_a?(Array) ? self.family_members.first[1] : [self.family_members.first[1]] 
+      self.send(method_to_call, members.collect { |m| ShelbyArena::Person.load_by_id(m['PersonID']) })       
     end
 
   end

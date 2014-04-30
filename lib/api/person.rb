@@ -62,6 +62,11 @@ module ShelbyArena
     # end
 
 
+    def active
+      self.record_status_value.downcase == 'active'
+    end
+
+
     def family_role
       self.family_member_role_value.blank? ? 'Other' : self.family_member_role_value
     end

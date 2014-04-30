@@ -22,20 +22,20 @@ ShelbyArena::Api.connect(shelby_session.id,
 person_list = ShelbyArena::PersonList.new({campus_id: 3})
 person = person_list[0]
 
-debugger
-asdf=111
+# debugger
+# asdf=111
 
-# puts '*****************'
-# puts person_list.inspect
-# puts '*****************'
-# puts '*****************'
+puts '*****************'
+puts person_list.inspect
+puts '*****************'
+puts '*****************'
 
-# person2 = ShelbyArena::Person.load_by_id(55144)
+person2 = ShelbyArena::Person.load_by_id(person.person_id)
 
 # debugger
 # asdf=222
 
-# puts '*****************'
-# puts person.inspect
-# puts '*****************'
-# puts '*****************'
+puts '*****************'
+puts person2.inspect
+puts '*****************'
+puts '*****************'

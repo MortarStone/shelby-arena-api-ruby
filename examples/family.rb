@@ -24,5 +24,10 @@ person = person_list[0]
 
 family = ShelbyArena::Family.load_by_id(person.family_id)
 
-debugger
-asdf=222
+# debugger
+# asdf=222
+
+puts '*****************'
+puts family.inspect
+puts '*****************'
+puts '*****************'

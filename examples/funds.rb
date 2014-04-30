@@ -22,20 +22,20 @@ ShelbyArena::Api.connect(shelby_session.id,
 fund_list = ShelbyArena::FundList.new
 fund = fund_list[0]
 
-debugger
-asdf=111
+# debugger
+# asdf=111
 
-# puts '*****************'
-# puts person_list.inspect
-# puts '*****************'
-# puts '*****************'
+puts '*****************'
+puts fund_list.inspect
+puts '*****************'
+puts '*****************'
 
 fund2 = ShelbyArena::Fund.load_by_id(fund.fund_id)
 
-debugger
-asdf=222
+# debugger
+# asdf=222
 
-# puts '*****************'
-# puts person.inspect
-# puts '*****************'
-# puts '*****************'
+puts '*****************'
+puts fund2.inspect
+puts '*****************'
+puts '*****************'

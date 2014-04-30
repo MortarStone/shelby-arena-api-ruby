@@ -11,8 +11,13 @@ module ShelbyArena
     # Options:
     # :reader - (optional) The Reader to use to load the data.
     def initialize(options = {})
+      @json_data = []
       reader = options[:reader] || ShelbyArena::PersonListReader.new(options)
-      @json_data = reader.load_data['PersonListResult']['Persons']['Person']
+      data = reader.load_data['PersonListResult']['Persons']  
+      unless data.nil?
+        # needs to be an array of hashes.
+        @json_data = data['Person'].is_a?(Array) ? data['Person'] : [data['Person']]
+      end            
     end
 
     # Get the specified person.

@@ -14,8 +14,13 @@ module ShelbyArena
     # Options:
     # :reader - (optional) The Reader to use to load the data.
     def initialize(options = {})
-      reader = options[:reader] || ShelbyArena::FundListReader.new(options)    
-      @json_data = reader.load_data['FundListResult']['Funds']['Fund']
+      @json_data = []
+      reader = options[:reader] || ShelbyArena::FundListReader.new(options)  
+      data = reader.load_data['FundListResult']['Funds']   
+      unless data.nil?
+        # needs to be an array of hashes.
+        @json_data = data['Fund'].is_a?(Array) ? data['Fund'] : [data['Fund']]
+      end      
     end
 
     # Get the specified fund.

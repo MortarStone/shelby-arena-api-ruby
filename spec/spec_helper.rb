@@ -1,10 +1,10 @@
-require File.expand_path( File.dirname(__FILE__) + '/../example/shelby_arena_keys.rb')
+require File.expand_path( File.dirname(__FILE__) + '/../examples/shelby_arena_keys.rb')
 require File.expand_path( File.dirname(__FILE__) + '/../lib/shelby_arena.rb')
 
 require 'debugger'
 
 require 'vcr'
-require 'vcr_setup'
+require 'vcr_helper'
 require 'webmock/rspec'
 
 Dir.glob(File.dirname(__FILE__) + "/factories/*").each { |f| require f }

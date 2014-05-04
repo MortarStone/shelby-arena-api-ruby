@@ -1,7 +1,9 @@
 module ShelbyArena
 
   class Person < ApiObject
-    attribute :addresses, Array[ShelbyArena::Address]
+    include Virtus.model
+
+    attribute :addresses, Array[Address]
     attribute :campus_id, Integer
     attribute :campus_name, String
     attribute :family_id, Integer

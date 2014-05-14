@@ -4,6 +4,7 @@ module ShelbyArena
 
   api_path = SHELBY_ARENA_LIB_DIR + '/api/'
   require api_path + 'api_object.rb'
+  require api_path + 'address.rb'
   Dir["#{api_path}/*.rb"].each { |f| require(f) }
 
   readers_path = SHELBY_ARENA_LIB_DIR + '/readers/'

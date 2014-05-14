@@ -1,6 +1,7 @@
 module ShelbyArena
 
   class Person < ApiObject
+
     attribute :addresses, Array[Address]
     attribute :campus_id, Integer
     attribute :campus_name, String

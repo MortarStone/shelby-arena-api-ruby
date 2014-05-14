@@ -3,6 +3,7 @@ module ShelbyArena
   # This is a helper class for the person object so the data coming 
   # through via Virtus is a hash that has been converted to an array.
   class Address < ApiObject
+
     attribute :address_id, Integer
     attribute :city, String
     attribute :country, String

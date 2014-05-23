@@ -34,9 +34,9 @@ This project is maintained by Wes Hays (https://github.com/weshays).
 
 == Contributors
 
-Wanna help?  It could be you...
+Jason Hagglund: https://github.com/TheMetalCode
 
 
 == Want to Contribute?
 
-If you would like to get involved in this project, then please fork the project. Make changes, add features, write some tests, and then send a pull request. 
+If you would like to get involved in this project, then please fork the project. Make changes, add features, write some tests, and then send a pull request.

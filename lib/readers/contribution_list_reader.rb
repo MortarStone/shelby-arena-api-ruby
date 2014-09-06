@@ -27,7 +27,9 @@ module ShelbyArena
          FundFilter
          ProjectFilter
          Transaction
-         SortExpression).sort
+         SortExpression,
+         PageIndex
+         PageSize).sort
     end
 
   end

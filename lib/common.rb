@@ -25,8 +25,8 @@ module ShelbyArena
     when :delete
       raise 'Shelby DELETE not tested yet'
       # Typhoeus::Request.delete(url, {:headers => headers, :params => params})
-    end    
-    
+    end
+
     if !response.success?
       if response.code > 0
         raise ShelbyArenaExceptions::UnableToConnectToShelbyArena.new(response.body)
@@ -40,18 +40,18 @@ module ShelbyArena
           raise ShelbyArenaExceptions::ShelbyArenaResponseError.new(error_messages)
         end
       end
-    end   
-    
+    end
+
     response
-  end  
+  end
 
 
   def self._xml2json(xml)
-    # {KeepRoot: true, ForceArray: false, SuppressEmpty: true} were set to 
+    # {KeepRoot: true, ForceArray: false, SuppressEmpty: true} were set to
     # maximize compatibility with Hash.from_xml, used previously.
     #
     XmlSimple.xml_in(xml, {KeepRoot: true, ForceArray: false, SuppressEmpty: true})
-  end  
+  end
 
 
   def self._generate_api_signature(path, params)
@@ -71,5 +71,5 @@ module ShelbyArena
        .gsub(/([a-z\d])([A-Z])/,'\1_\2')
        .tr("-", "_")
        .downcase
-  end    
+  end
 end

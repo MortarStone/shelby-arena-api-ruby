@@ -40,24 +40,6 @@ module ShelbyArena
 
     # Helper methods
 
-    def fund_id
-      begin
-        self.contribution_funds['ContributionFund']['Fund']['FundId']
-      rescue
-        nil
-      end
-    end
-
-
-    def fund_name
-      begin
-        self.contribution_funds['ContributionFund']['Fund']['FundName']
-      rescue
-        nil
-      end
-    end
-
-
     def first_name_with_nickname
       begin
         fname = self.person_information['FirstName']
@@ -88,7 +70,22 @@ module ShelbyArena
         nil
       end
     end
-    
+
+
+    def contribution_splits
+      begin
+        if self.contribution_funds['ContributionFund'].is_a?(Array)
+          self.contribution_funds['ContributionFund'].collect { |data| ContributionSplit.new(data) }
+        elsif self.contribution_funds['ContributionFund'].is_a?(Hash)
+          [ ContributionSplit.new( self.contribution_funds['ContributionFund'] ) ]
+        else
+          [] # Something else
+        end
+      rescue
+        nil
+      end
+    end
+
   end
 
 end

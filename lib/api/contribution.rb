@@ -29,10 +29,10 @@ module ShelbyArena
     # Constructor.
     #
     # @param reader (optional) The object that has the data. This can be a ContributionReader or Hash object.
-    def initialize(reader = nil)    
-      if reader.is_a?(ContributionReader)    
+    def initialize(reader = nil)
+      if reader.is_a?(ContributionReader)
         initialize_from_json_object(reader.load_data['Contribution'])
-      elsif reader.is_a?(Hash)   
+      elsif reader.is_a?(Hash)
         initialize_from_json_object(reader)
       end
     end
@@ -43,7 +43,7 @@ module ShelbyArena
     def first_name_with_nickname
       begin
         fname = self.person_information['FirstName']
-        if self.person_information['NickName'].strip != '' and 
+        if self.person_information['NickName'].strip != '' and
            self.person_information['NickName'].strip != fname
           fname += " (#{self.person_information['NickName']})"
         end
@@ -65,7 +65,7 @@ module ShelbyArena
 
     def last_name
       begin
-        self.person_information['NickName']
+        self.person_information['LastName']
       rescue
         nil
       end

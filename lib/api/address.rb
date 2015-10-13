@@ -1,6 +1,6 @@
 module ShelbyArena
 
-  # This is a helper class for the person object so the data coming 
+  # This is a helper class for the person object so the data coming
   # through via Virtus is a hash that has been converted to an array.
   class Address < ApiObject
 
@@ -12,16 +12,16 @@ module ShelbyArena
     attribute :postal_code, String
     attribute :primary, Boolean
     attribute :state, String
-    attribute :street_line_1, String
+    attribute :street_line1, String
 
 
     # Constructor.
     #
     # @param data A hash of data
-    def initialize(data)   
+    def initialize(data)
       # data[0] is 'Address'
       # data[1] is a Hash of address info to match the attributes above.
-      initialize_from_json_object(data[1])       
+      initialize_from_json_object(data[1])
     end
 
   end
